@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 LOG_FILE = "ad_scanner.log"
-LOG_MAX_LINES = 1,000
+LOG_MAX_LINES = 1000
 
 def escribir_log(mensaje, tipo="INFO"):
     """

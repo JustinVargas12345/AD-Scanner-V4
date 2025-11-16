@@ -19,7 +19,8 @@ def crear_tabla(conn, config):
             Ubicacion NVARCHAR(255),
             EstadoCuenta NVARCHAR(50),
             PingStatus NVARCHAR(50),
-            TiempoPing NVARCHAR(20),
+            TiempoPing NVARCHAR(50),
+            ActivoTiempo NVARCHAR(30) NULL,
             InactivoDesde DATETIME NULL,
             EstadoAD NVARCHAR(50) DEFAULT 'Dentro de AD',
             UltimaActualizacion DATETIME DEFAULT GETDATE()
