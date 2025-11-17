@@ -1,10 +1,14 @@
 
 import time
-from db_conexion import conectar_sql
-from db_table import crear_tabla
-from ad_utils import obtener_equipos_ad, insertar_o_actualizar
-import gui_config
-from logs_utils import eliminar_logs
+from  Datos.db_conexion import conectar_sql
+from Datos.db_table import crear_tabla
+from Modulos.ad_utils import obtener_equipos_ad, insertar_o_actualizar
+from Interfaz import  gui_config
+from Configs.logs_utils import eliminar_logs
+from Configs.webhook_utils import enviar_notificacion_webhook
+
+
+
 # ------------------------
 # BUCLE PRINCIPAL
 # ------------------------
@@ -35,6 +39,9 @@ def main(config):
 
             # Insertar o actualizar equipos en DB usando ping
             insertar_o_actualizar(conn, equipos, equipos_ad_actuales, ping_interval=PING_INTERVAL)
+            
+            enviar_notificacion_webhook(conn)
+
             
             print(f"[INFO] Actualización completada. Esperando {PING_INTERVAL} segundos...\n")
             time.sleep(PING_INTERVAL)

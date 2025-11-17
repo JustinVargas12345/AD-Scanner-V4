@@ -1,4 +1,4 @@
-from db_conexion import ejecutar_sql
+from Datos.db_conexion import ejecutar_sql
 
 def crear_tabla(conn, config):
     """
@@ -23,6 +23,7 @@ def crear_tabla(conn, config):
             ActivoTiempo NVARCHAR(30) NULL,
             InactivoDesde DATETIME NULL,
             EstadoAD NVARCHAR(50) DEFAULT 'Dentro de AD',
+            UltimoWebhook DATE NULL,
             UltimaActualizacion DATETIME DEFAULT GETDATE()
         )
     """

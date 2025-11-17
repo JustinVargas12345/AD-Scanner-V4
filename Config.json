@@ -1,8 +1,8 @@
 {
   "PING_INTERVAL": "30",
   "AD_SERVER": "DC.lab.local",
-  "AD_USER": "gAAAAABpGVmdEt1jPBZTnlt2KDS3EgP8C-Up1GYjwGedUwMgUuH5bAQtu5ge4DOUmWjAKqF2DU8tJlw7PYJwupQyQSVIxTtNEib_CEvHur3yldLokP8k7Tk=",
-  "AD_PASSWORD": "gAAAAABpGVmdgaRKK9sFJlN8oXU7dc5nlK_edNIXdJnAtsh3e7rzmsLAUlHAogEsT68lPpYwzvbEkf3ffPr4HA5S2XbDl5iang==",
+  "AD_USER": "gAAAAABpGpp0Y1OnnSOTsuhmAAIkcEoEhaWy5SRYVTSd5ykWOXkrG9Sz-holtg0W47JJhkOSxH_ei1daKJfTCFjFmdXghiChY4dCOIQOi_pZihuBI9aZd_g=",
+  "AD_PASSWORD": "gAAAAABpGpp0QgdRwAuaYbsyRyxLnFav_dLbn2mLuD8vrid7YoDzYh8ILMH3uCS2MsyaLDGFDV8_fJ-0fNK5aMmZe3t2MTdo8Q==",
   "AD_SEARCH_BASE": "DC=lab,DC=local",
   "DB_DRIVER": "{ODBC Driver 17 for SQL Server}",
   "DB_SERVER": ".\\SQLEXPRESS",

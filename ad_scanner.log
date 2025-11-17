@@ -1342,3 +1342,438 @@
 [2025-11-16 01:06:43] [WARNING] Ping fallido: PCCLIENTE → Inactivo
 [2025-11-16 01:07:13] [INFO] Equipos obtenidos desde AD: 2
 [2025-11-16 01:07:17] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 21:31:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:31:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:32:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:32:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:33:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:33:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:34:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:34:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:35:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:35:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:36:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:36:37] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:37:07] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:37:37] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:38:07] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:38:37] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:39:07] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:39:37] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:40:07] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:40:37] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:41:26] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:41:56] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:42:26] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 21:42:57] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:46:17] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:46:47] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:47:17] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:47:47] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:48:13] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:48:43] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:48:51] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:50:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:51:19] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:51:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:52:19] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:52:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:53:19] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:53:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:54:19] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:55:01] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:55:31] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:56:01] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:56:31] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:57:01] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:57:31] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:58:01] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:58:32] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:59:02] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 22:59:32] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:00:02] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:00:06] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:00:06] [INFO] Estado de PCCLIENTE cambió de Activo a Inactivo
+[2025-11-16 23:00:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:00:39] [INFO] Estado de PCCLIENTE cambió de Inactivo a Activo
+[2025-11-16 23:01:09] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:01:13] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:01:13] [INFO] Estado de PCCLIENTE cambió de Activo a Inactivo
+[2025-11-16 23:01:34] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:01:38] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:01:38] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:01:38] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:02:08] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:02:12] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:02:12] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:02:12] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:02:42] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:02:46] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:02:46] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:02:46] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:03:16] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:03:20] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:03:20] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:03:20] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-Scanner-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:18:15] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:18:19] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:18:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:18:53] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:19:23] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:19:27] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:19:52] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:19:56] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:19:56] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:19:56] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:20:26] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:20:30] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:20:30] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:20:30] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:21:00] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:21:04] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:21:04] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:21:04] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:21:34] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:21:38] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:21:38] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:21:38] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:22:08] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:22:12] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:22:12] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:22:12] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:22:42] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:22:46] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:22:46] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:22:46] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:23:16] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:23:20] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:23:20] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:23:20] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:23:50] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:23:54] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:23:54] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:23:54] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:24:24] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:24:28] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:24:28] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:24:28] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:24:58] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:25:02] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:25:02] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:25:02] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:25:32] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:25:36] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:25:36] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:25:36] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:26:06] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:26:10] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:26:10] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:26:10] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:26:40] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:26:44] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:26:44] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:26:44] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:27:14] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:27:18] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:27:18] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:27:18] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:27:48] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:27:52] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:27:52] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:27:52] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:28:22] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:28:26] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:28:26] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:28:26] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 83, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:28:56] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:29:00] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:29:30] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:29:34] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:30:04] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:30:08] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:30:08] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:30:08] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:30:38] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:30:42] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:30:42] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:30:42] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:31:12] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:31:16] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:31:16] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:31:16] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:31:46] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:31:50] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:31:50] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:31:50] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:32:20] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:32:24] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:32:24] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:32:24] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:32:54] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:32:58] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:32:58] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:32:58] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:33:28] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:33:32] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:33:32] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:33:32] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:34:02] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:34:06] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:34:06] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:34:06] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:34:36] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:34:40] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:34:40] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:34:40] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:35:10] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:35:14] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:35:14] [ERROR] Error en enviar_notificacion_webhook: ejecutar_sql() got an unexpected keyword argument 'fetch'
+[2025-11-16 23:35:14] [ERROR] Traceback (most recent call last):
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_utils.py", line 12, in enviar_notificacion_webhook
+    enviar_alertas_inactividad(conn)
+  File "C:\Users\Administrador\Continuacion4\AD-SCANNER-V4\Configs\webhook_alerts.py", line 86, in enviar_alertas_inactividad
+    ya_enviado = ejecutar_sql(
+                 ^^^^^^^^^^^^^
+TypeError: ejecutar_sql() got an unexpected keyword argument 'fetch'
+
+[2025-11-16 23:35:53] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:35:56] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:36:26] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:36:30] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:37:01] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:37:05] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:37:35] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:37:39] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:38:09] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:38:13] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:38:43] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:38:47] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:39:17] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:39:21] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:39:51] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:39:55] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:40:25] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:40:29] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:40:59] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:41:03] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:41:33] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:41:37] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:42:07] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:42:11] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:42:41] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:42:45] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:43:15] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:43:19] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:43:49] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:43:53] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:44:23] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:44:27] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:44:57] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:45:01] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:45:31] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:45:35] [WARNING] Ping fallido: PCCLIENTE → Inactivo
+[2025-11-16 23:45:56] [INFO] Equipos obtenidos desde AD: 2
+[2025-11-16 23:45:59] [WARNING] Ping fallido: PCCLIENTE → Inactivo
