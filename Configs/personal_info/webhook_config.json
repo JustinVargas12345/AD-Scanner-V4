@@ -1,4 +1,5 @@
 {
-    "webhook_url": "",
-    "min_seconds_inactivo": 86400
+    "webhook_url": "https://eo1wx4vsvm0if2c.m.pipedream.net",
+    "min_seconds_inactivo": 86400,
+    "webhook_secret": ""
 }

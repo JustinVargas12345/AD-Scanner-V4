@@ -2,10 +2,10 @@
 import json
 import os
 import customtkinter as ctk
-from tkinter import messagebox
+from tkinter import messagebox, Canvas, Frame, Scrollbar
 from Modulos.ad_utils import validar_ad
 from Configs.logs_utils import eliminar_logs
-from Datos.db_conexion import conectar_sql   # <-- Validación SQL agregada
+from Datos.db_conexion import conectar_sql
 from cryptography.fernet import Fernet
 
 
@@ -17,7 +17,6 @@ KEY_FILE = "secret.key"
 # ENCRIPTACIÓN / DESENCRIPTACIÓN
 # ---------------------------------------------------
 def cargar_key():
-    """Carga o genera la clave de encriptación."""
     if not os.path.exists(KEY_FILE):
         key = Fernet.generate_key()
         with open(KEY_FILE, "wb") as f:
@@ -58,7 +57,6 @@ def cargar_config():
                 data[campo] = decrypt_value(data[campo])
 
         return data
-
     except:
         return {}
 
@@ -86,7 +84,7 @@ def guardar_config(values):
 
 
 # ---------------------------------------------------
-# GUI PRINCIPAL
+# GUI PRINCIPAL (CON SCROLL)
 # ---------------------------------------------------
 def abrir_gui_pro():
     config = cargar_config()
@@ -96,26 +94,48 @@ def abrir_gui_pro():
 
     root = ctk.CTk()
     root.title("Configuración AD Scanner – Pro")
-    root.geometry("700x880")   # <-- Más grande (recomendación C)
+    root.geometry("700x700")  # tamaño menor para laptops
     root.resizable(False, False)
 
-    error_labels = {}
+    # -----------------------------
+    # SCROLL SYSTEM
+    # -----------------------------
+    canvas = Canvas(root, bg="#1a1a1a", highlightthickness=0)
+    canvas.pack(side="left", fill="both", expand=True)
+
+    scrollbar = Scrollbar(root, orient="vertical", command=canvas.yview)
+    scrollbar.pack(side="right", fill="y")
+
+    canvas.configure(yscrollcommand=scrollbar.set)
+
+    frame_interno = Frame(canvas, bg="#1a1a1a")
+    canvas.create_window((0, 0), window=frame_interno, anchor="nw")
+
+    def ajustar_scroll(event):
+        canvas.configure(scrollregion=canvas.bbox("all"))
+
+    frame_interno.bind("<Configure>", ajustar_scroll)
+
+    # Permitir scroll con la rueda del mouse
+    root.bind_all("<MouseWheel>", lambda e: canvas.yview_scroll(-1*(e.delta//120), "units"))
 
     # ---------------------------------------------------
-    # FUNCIÓN PARA CREAR CAMPOS VISUALES
+    # FUNCIÓN PARA CREAR CAMPOS
     # ---------------------------------------------------
+    error_labels = {}
+
     def campo(label, default, row, show=None):
-        ctk.CTkLabel(root, text=label, font=("Segoe UI", 15)).grid(
+        ctk.CTkLabel(frame_interno, text=label, font=("Segoe UI", 15)).grid(
             row=row, column=0, padx=25, pady=7, sticky="e"
         )
 
-        entry = ctk.CTkEntry(root, width=430, show=show)  # <-- Más ancho
+        entry = ctk.CTkEntry(frame_interno, width=430, show=show)
         entry.grid(row=row, column=1, pady=7, sticky="w")
 
         valor = config.get(label, default)
         entry.insert(0, "" if valor is None else valor)
 
-        error = ctk.CTkLabel(root, text="", text_color="red", font=("Segoe UI", 12))
+        error = ctk.CTkLabel(frame_interno, text="", text_color="red", font=("Segoe UI", 12))
         error.grid(row=row+1, column=1, sticky="w")
         error_labels[label] = error
 
@@ -132,7 +152,7 @@ def abrir_gui_pro():
         ad_pass.configure(show="" if ad_pass.cget("show") == "*" else "*")
         btn_toggle.configure(text="O" if ad_pass.cget("show") == "" else "M")
 
-    btn_toggle = ctk.CTkButton(root, text="M", width=40, command=toggle_pass)
+    btn_toggle = ctk.CTkButton(frame_interno, text="M", width=40, command=toggle_pass)
     btn_toggle.grid(row=6, column=2, padx=5, sticky="w")
 
     # --------------------------- CAMPOS DB ---------------------------
@@ -142,10 +162,10 @@ def abrir_gui_pro():
         "ODBC Driver 13 for SQL Server"
     ]
 
-    ctk.CTkLabel(root, text="DB_DRIVER", font=("Segoe UI", 15)).grid(
+    ctk.CTkLabel(frame_interno, text="DB_DRIVER", font=("Segoe UI", 15)).grid(
         row=10, column=0, padx=25, pady=7, sticky="e"
     )
-    db_driver = ctk.CTkOptionMenu(root, values=driver_options, width=430)
+    db_driver = ctk.CTkOptionMenu(frame_interno, values=driver_options, width=430)
     db_driver.grid(row=10, column=1, sticky="w")
     db_driver.set(config.get("DB_DRIVER", driver_options[0]))
 
@@ -159,16 +179,16 @@ def abrir_gui_pro():
         db_pass.configure(show="" if db_pass.cget("show") == "*" else "*")
         btn_toggle_db.configure(text="O" if db_pass.cget("show") == "" else "M")
 
-    btn_toggle_db = ctk.CTkButton(root, text="M", width=40, command=toggle_db_pass)
+    btn_toggle_db = ctk.CTkButton(frame_interno, text="M", width=40, command=toggle_db_pass)
     btn_toggle_db.grid(row=20, column=2, padx=5, sticky="w")
 
     # --------------------------- LIMPIEZA LOGS ---------------------------
-    ctk.CTkLabel(root, text="Modo Limpieza Logs", font=("Segoe UI", 15)).grid(
+    ctk.CTkLabel(frame_interno, text="Modo Limpieza Logs", font=("Segoe UI", 15)).grid(
         row=22, column=0, padx=25, pady=7, sticky="e"
     )
 
     log_option_menu = ctk.CTkOptionMenu(
-        root, values=["Manual", "Automático"], width=430
+        frame_interno, values=["Manual", "automatico"], width=430
     )
     log_option_menu.grid(row=22, column=1, sticky="w")
     log_option_menu.set(config.get("LOG_MODE", "Manual"))
@@ -186,14 +206,12 @@ def abrir_gui_pro():
 
         errores = False
 
-        # Validar ping
         try:
             int(ping.get())
         except ValueError:
             error_labels["PING_INTERVAL"].configure(text="Debe ser un número entero")
             errores = True
 
-        # Validar AD
         credenciales_ad = {
             "AD_SERVER": ad_server.get(),
             "AD_USER": ad_user.get(),
@@ -216,7 +234,6 @@ def abrir_gui_pro():
         if errores:
             return
 
-        # Validar SQL SIN cerrar el GUI
         sql_config = {
             "DB_DRIVER": db_driver.get(),
             "DB_SERVER": db_server.get(),
@@ -234,7 +251,6 @@ def abrir_gui_pro():
             error_labels["DB_SERVER"].configure(text="No se pudo conectar a SQL Server")
             return
 
-        # Preparar valores a guardar
         values = {
             "PING_INTERVAL": ping.get(),
             "AD_SERVER": ad_server.get(),
@@ -250,7 +266,6 @@ def abrir_gui_pro():
             "LOG_MODE": log_option_menu.get()
         }
 
-        # Guardar config
         if guardar_config(values):
             if values["LOG_MODE"].lower() == "automatico":
                 eliminar_logs()
@@ -259,7 +274,7 @@ def abrir_gui_pro():
             root.destroy()
 
     btn = ctk.CTkButton(
-        root,
+        frame_interno,
         text="Guardar Configuración",
         width=400,
         height=50,
