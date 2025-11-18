@@ -1,4 +1,4 @@
-
+'''
 import json
 import os
 import customtkinter as ctk
@@ -270,6 +270,276 @@ def abrir_gui_pro():
             if values["LOG_MODE"].lower() == "automatico":
                 eliminar_logs()
 
+            config_result = values
+            root.destroy()
+
+    btn = ctk.CTkButton(
+        frame_interno,
+        text="Guardar Configuración",
+        width=400,
+        height=50,
+        corner_radius=12,
+        font=("Segoe UI", 16),
+        command=click_guardar
+    )
+    btn.grid(row=24, column=0, columnspan=3, pady=45)
+
+    root.mainloop()
+    return config_result
+'''
+import json
+import os
+import customtkinter as ctk
+from tkinter import messagebox, Canvas, Frame, Scrollbar
+from Modulos.ad_utils import validar_ad
+from Datos.db_conexion import conectar_sql
+from cryptography.fernet import Fernet
+
+
+CONFIG_FILE = "Config.json"
+KEY_FILE = "secret.key"
+
+
+# ---------------------------------------------------
+# ENCRIPTACIÓN / DESENCRIPTACIÓN
+# ---------------------------------------------------
+def cargar_key():
+    if not os.path.exists(KEY_FILE):
+        key = Fernet.generate_key()
+        with open(KEY_FILE, "wb") as f:
+            f.write(key)
+    else:
+        with open(KEY_FILE, "rb") as f:
+            key = f.read()
+    return Fernet(key)
+
+
+fernet = cargar_key()
+
+
+def encrypt_value(value):
+    return fernet.encrypt(value.encode()).decode()
+
+
+def decrypt_value(value):
+    try:
+        return fernet.decrypt(value.encode()).decode()
+    except:
+        return value
+
+
+# ---------------------------------------------------
+# CARGAR / GUARDAR CONFIG
+# ---------------------------------------------------
+def cargar_config():
+    if not os.path.exists(CONFIG_FILE):
+        return {}
+
+    try:
+        with open(CONFIG_FILE, "r", encoding="utf-8") as f:
+            data = json.load(f)
+
+        for campo in ["AD_USER", "AD_PASSWORD", "DB_USER", "DB_PASSWORD"]:
+            if campo in data and data[campo]:
+                data[campo] = decrypt_value(data[campo])
+
+        return data
+    except:
+        return {}
+
+
+def guardar_config(values):
+    try:
+        int(values.get("PING_INTERVAL", ""))
+    except ValueError:
+        messagebox.showerror("Error", "PING_INTERVAL debe ser un número entero.")
+        return False
+
+    try:
+        for campo in ["AD_USER", "AD_PASSWORD", "DB_USER", "DB_PASSWORD"]:
+            if campo in values and values[campo]:
+                values[campo] = encrypt_value(values[campo])
+
+        with open(CONFIG_FILE, "w", encoding="utf-8") as f:
+            json.dump(values, f, indent=2)
+
+        return True
+
+    except Exception as e:
+        messagebox.showerror("Error", f"No se pudo guardar la configuración:\n{e}")
+        return False
+
+
+# ---------------------------------------------------
+# GUI PRINCIPAL (CON SCROLL)
+# ---------------------------------------------------
+def abrir_gui_pro():
+    config = cargar_config()
+
+    ctk.set_appearance_mode("dark")
+    ctk.set_default_color_theme("blue")
+
+    root = ctk.CTk()
+    root.title("Configuración AD Scanner – Pro")
+    root.geometry("700x700")
+    root.resizable(False, False)
+
+    # -----------------------------
+    # SCROLL SYSTEM
+    # -----------------------------
+    canvas = Canvas(root, bg="#1a1a1a", highlightthickness=0)
+    canvas.pack(side="left", fill="both", expand=True)
+
+    scrollbar = Scrollbar(root, orient="vertical", command=canvas.yview)
+    scrollbar.pack(side="right", fill="y")
+
+    canvas.configure(yscrollcommand=scrollbar.set)
+
+    frame_interno = Frame(canvas, bg="#1a1a1a")
+    canvas.create_window((0, 0), window=frame_interno, anchor="nw")
+
+    def ajustar_scroll(event):
+        canvas.configure(scrollregion=canvas.bbox("all"))
+
+    frame_interno.bind("<Configure>", ajustar_scroll)
+
+    root.bind_all("<MouseWheel>", lambda e: canvas.yview_scroll(-1*(e.delta//120), "units"))
+
+    # ---------------------------------------------------
+    # FUNCIÓN PARA CREAR CAMPOS
+    # ---------------------------------------------------
+    error_labels = {}
+
+    def campo(label, default, row, show=None):
+        ctk.CTkLabel(frame_interno, text=label, font=("Segoe UI", 15)).grid(
+            row=row, column=0, padx=25, pady=7, sticky="e"
+        )
+
+        entry = ctk.CTkEntry(frame_interno, width=430, show=show)
+        entry.grid(row=row, column=1, pady=7, sticky="w")
+
+        valor = config.get(label, default)
+        entry.insert(0, "" if valor is None else valor)
+
+        error = ctk.CTkLabel(frame_interno, text="", text_color="red", font=("Segoe UI", 12))
+        error.grid(row=row+1, column=1, sticky="w")
+        error_labels[label] = error
+
+        return entry
+
+    # --------------------------- CAMPOS AD ---------------------------
+    ping = campo("PING_INTERVAL", "25", 0)
+    ad_server = campo("AD_SERVER", "DC.lab.local", 2)
+    ad_user = campo("AD_USER", "admin@lab.local", 4)
+    ad_pass = campo("AD_PASSWORD", "TuClave", 6, show="*")
+    ad_base = campo("AD_SEARCH_BASE", "DC=lab,DC=local", 8)
+
+    def toggle_pass():
+        ad_pass.configure(show="" if ad_pass.cget("show") == "*" else "*")
+        btn_toggle.configure(text="O" if ad_pass.cget("show") == "" else "M")
+
+    btn_toggle = ctk.CTkButton(frame_interno, text="M", width=40, command=toggle_pass)
+    btn_toggle.grid(row=6, column=2, padx=5, sticky="w")
+
+    # --------------------------- CAMPOS DB ---------------------------
+    driver_options = [
+        "ODBC Driver 17 for SQL Server",
+        "ODBC Driver 18 for SQL Server",
+        "ODBC Driver 13 for SQL Server"
+    ]
+
+    ctk.CTkLabel(frame_interno, text="DB_DRIVER", font=("Segoe UI", 15)).grid(
+        row=10, column=0, padx=25, pady=7, sticky="e"
+    )
+    db_driver = ctk.CTkOptionMenu(frame_interno, values=driver_options, width=430)
+    db_driver.grid(row=10, column=1, sticky="w")
+    db_driver.set(config.get("DB_DRIVER", driver_options[0]))
+
+    db_server = campo("DB_SERVER", ".\\SQLEXPRESS", 12)
+    db_name = campo("DB_NAME", "DbAlgoritmo", 14)
+    db_trusted = campo("DB_TRUSTED", "yes", 16)
+    db_user = campo("DB_USER", "sa", 18)
+    db_pass = campo("DB_PASSWORD", "Clave123", 20, show="*")
+
+    def toggle_db_pass():
+        db_pass.configure(show="" if db_pass.cget("show") == "*" else "*")
+        btn_toggle_db.configure(text="O" if db_pass.cget("show") == "" else "M")
+
+    btn_toggle_db = ctk.CTkButton(frame_interno, text="M", width=40, command=toggle_db_pass)
+    btn_toggle_db.grid(row=20, column=2, padx=5, sticky="w")
+
+    config_result = {}
+
+    # ---------------------------------------------------
+    # BOTÓN GUARDAR
+    # ---------------------------------------------------
+    def click_guardar():
+        nonlocal config_result
+
+        for lbl in error_labels.values():
+            lbl.configure(text="")
+
+        errores = False
+
+        try:
+            int(ping.get())
+        except ValueError:
+            error_labels["PING_INTERVAL"].configure(text="Debe ser un número entero")
+            errores = True
+
+        credenciales_ad = {
+            "AD_SERVER": ad_server.get(),
+            "AD_USER": ad_user.get(),
+            "AD_PASSWORD": ad_pass.get(),
+            "AD_SEARCH_BASE": ad_base.get()
+        }
+
+        resultado = validar_ad(credenciales_ad)
+
+        if not resultado["ok"]:
+            campo_err = resultado["error"]
+
+            if campo_err in error_labels:
+                error_labels[campo_err].configure(text="Valor incorrecto")
+            else:
+                error_labels["AD_PASSWORD"].configure(text="Credenciales inválidas")
+
+            errores = True
+
+        if errores:
+            return
+
+        sql_config = {
+            "DB_DRIVER": db_driver.get(),
+            "DB_SERVER": db_server.get(),
+            "DB_NAME": db_name.get(),
+            "DB_TRUSTED": db_trusted.get(),
+            "DB_USER": db_user.get(),
+            "DB_PASSWORD": db_pass.get(),
+        }
+
+        try:
+            conn = conectar_sql(sql_config)
+            conn.close()
+        except Exception:
+            error_labels["DB_SERVER"].configure(text="No se pudo conectar a SQL Server")
+            return
+
+        values = {
+            "PING_INTERVAL": ping.get(),
+            "AD_SERVER": ad_server.get(),
+            "AD_USER": ad_user.get(),
+            "AD_PASSWORD": ad_pass.get(),
+            "AD_SEARCH_BASE": ad_base.get(),
+            "DB_DRIVER": db_driver.get(),
+            "DB_SERVER": db_server.get(),
+            "DB_NAME": db_name.get(),
+            "DB_TRUSTED": db_trusted.get(),
+            "DB_USER": db_user.get() if db_trusted.get().lower() != "yes" else "",
+            "DB_PASSWORD": db_pass.get() if db_trusted.get().lower() != "yes" else "",
+        }
+
+        if guardar_config(values):
             config_result = values
             root.destroy()
 

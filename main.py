@@ -4,7 +4,6 @@ from  Datos.db_conexion import conectar_sql
 from Datos.db_table import crear_tabla
 from Modulos.ad_utils import obtener_equipos_ad, insertar_o_actualizar
 from Interfaz import  gui_config
-from Configs.logs_utils import eliminar_logs
 from Configs.webhook_utils import enviar_notificacion_webhook
 
 
@@ -26,8 +25,6 @@ def main(config):
 
     try:
         while True:
-            if config.get("LOG_MODE", "Manual").lower() == "automatico":
-                eliminar_logs()
             # Obtener equipos de AD usando config actual
             equipos = obtener_equipos_ad(config)
             if not equipos:

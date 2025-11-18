@@ -1,14 +1,13 @@
 {
   "PING_INTERVAL": "30",
   "AD_SERVER": "DC.laboratorio.local",
-  "AD_USER": "gAAAAABpG3v1CFa0bnQeG_6LvOGwc4L25Uh1pbkzPsr6s4CfuHSlf5RrQBTKmEnlVtoVKMgnnKlMpiXtYcLQR96R3Fpq0AEfkr1r41ZGVZuSAsN6gz2lKBw=",
-  "AD_PASSWORD": "gAAAAABpG3v1mxCV_zl7xu4ewjRT6Ux9qYD72ctGpy1yxVI3jdnEXOX1vBuWG3im9DUU_y2r0hkGJcw4NyXYnxiFiBmkBmJRWw==",
+  "AD_USER": "gAAAAABpHL8gwNY1qpK9zbc0aA1JY9WTpQP2F-KPx6nbAhASHrqZ2uLZMhgB3dAEIxFEIhouSwZQ7koStH297fNEG-FctM-RxwqXPA5la7NqPmBNWsptRnA=",
+  "AD_PASSWORD": "gAAAAABpHL8gPHRLM3BmiCm4Aqx0ofbVemWE3u-tlm_yDDOMPn_1X2L6TA-xoQp3bs_X7DGN7J1hnERiODew_f-9EY5PUIicXQ==",
   "AD_SEARCH_BASE": "DC=laboratorio,DC=local",
   "DB_DRIVER": "{ODBC Driver 17 for SQL Server}",
   "DB_SERVER": ".\\SQLEXPRESS",
   "DB_NAME": "DbAlgoritmo",
   "DB_TRUSTED": "yes",
   "DB_USER": "",
-  "DB_PASSWORD": "",
-  "LOG_MODE": "Autom\u00e1tico"
+  "DB_PASSWORD": ""
 }
